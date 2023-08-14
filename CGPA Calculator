@@ -1,0 +1,40 @@
+print("TO CALCULATE YOUR CGPA.......")
+print("\n")
+n = int(input("Enter the number of subjects: "))
+print("******")
+
+
+tgp = 0
+tch = 0
+
+for i in range(1, n + 1):
+    gp = input(f"Enter your grade  for subject {i}: ")
+    ch = float(input(f"Enter your credit hours for subject {i}: "))
+    print("---------------")
+
+    if gp == "S":
+        points = 10
+    elif gp == "A":
+        points = 9
+    elif gp == "B":
+        points = 8
+    elif gp == "C":
+        points = 7
+    elif gp == "D":
+        points = 6
+    elif gp == "E":
+        points = 5
+    elif gp == "F":
+        points = 0
+    else:
+        print("Wrong input")
+        continue
+
+    tgp += points * ch
+    tch += ch
+
+if tch > 0:
+    cgpa = tgp / tch
+    print(" Your CGPA is:{:.2f}".format(cgpa))
+else:
+    print("No valid subjects entered. Cannot calculate CGPA.")
